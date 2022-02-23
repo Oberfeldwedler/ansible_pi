@@ -4,18 +4,13 @@
   become: true
   tasks:
 
-  - name: apt update
-    apt:
+  - name: install nginx, nginx-core, nginx-common, php-fpm
+    package:
+      name: 
+        - nginx
+        - nginx-core
+        - nginx-common  
+        - php-fpm
+      state: latest
       update_cache: yes
 
-
-  - name: install nginx
-    apt:
-      name: nginx
-      state: latest
-
-
-  - name: install php for nginx
-    apt:
-      name: php-fpm    
-      state: latest

@@ -4,18 +4,12 @@
   become: true
   tasks:
 
-  - name: apt update
-    apt:
-      update_cache: yes
-
-
-  - name: remove nginx
-    apt:
-      name: nginx
+  - name: install nginx, nginx-core, nginx-common, php-fpm
+    package:
+      name: 
+        - nginx
+        - nginx-core
+        - nginx-common  
+        - php-fpm
       state: absent
 
-
-  - name: remove php for nginx
-    apt:
-      name: php-fpm    
-      state: absent 
