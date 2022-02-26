@@ -4,8 +4,8 @@
   become: true
   tasks:
 
-  - name: install nginx, nginx-core, nginx-common, php-fpm
-    package:
+  - name: install nginx, php-fpm via apt
+    apt:
       name: 
         - nginx
         - nginx-core
@@ -13,4 +13,5 @@
         - php-fpm
       state: latest
       update_cache: yes
+    when: ansible_distribution in ["Ubuntu","Debian"]
 

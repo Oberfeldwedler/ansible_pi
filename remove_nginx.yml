@@ -12,4 +12,5 @@
         - nginx-common  
         - php-fpm
       state: absent
+      purge: yes
 

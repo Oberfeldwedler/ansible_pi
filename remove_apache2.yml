@@ -1,0 +1,14 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: remove apache
+    package:
+      name: 
+        - apache2
+        - libapache2-mod-php
+      purge: yes
+      state: absent
+
